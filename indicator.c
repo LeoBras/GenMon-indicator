@@ -35,13 +35,14 @@ int main(void)
 
 	//LOWBAT!
 	if(bateria == 'D'){ //DESCARREGANDO
-		if (percentual <= 1)
+		if (percentual <= 1){
 			system("notify-send 'Carga MUITO fraca' 'Conecte o carregador agora, ou o computador desligará em breve' -i battery -u critical");
+			sleep(4);
+		}
 
 		if(percentual <= 0.1)
 			system("shutdown -h now");
 
-		sleep(4);
 	}
 
 	//Print Color
